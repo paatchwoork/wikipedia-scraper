@@ -12,11 +12,6 @@ final_dict = {}                 #The end results are going to be stored here
 filetype = 'json'              
 #filetype = 'csv'                
 
-countries.remove('us')          
-countries.remove('ma')
-countries.remove('fr')
-countries.remove('be')
-
 for country in countries:
 
     print(f"Processing '{country}'") 
@@ -71,7 +66,7 @@ elif filetype == 'csv':
                 outfile.write(f"{country},")
                 for key in field_names:
                     outfile.write(f"{final_dict[country][leader][key]},")
-        ### There seems to be a bug here and I'm very confused. I leaved it like this becaise I want to discuss it.
+        ### There seems to be a bug here and I'm very confused. I leaved it like this because I want to discuss it.
         ### When the csv is printed, the last comma is systematically sent at the beginning of the next line
         ### I've tried to clean the wikipedia paragraph of linebreaks because that would explain, but it doesn't change anything
         ### Using DictWriter would probably work but I'm too tired of this problem and I want to look at something else
